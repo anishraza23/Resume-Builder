@@ -1,0 +1,413 @@
+/* --- CSS Variables for easy maintenance --- */
+:root {
+    --primary-red: #E04A5A;
+    --dark-text: #333333;
+    --gray-text: #555555;
+    --light-bg: #FCE4E6;
+    --white: #ffffff;
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Base Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Header --- */
+.header {
+    background-color: var(--white);
+    padding: 15px 120px; /* 1440px desktop padding */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* A common max width for centered content */
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.company-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.tagline {
+    font-size: 0.8rem;
+    color: var(--gray-text);
+    margin-top: -5px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-red);
+}
+
+.cta-button {
+    background-color: var(--primary-red);
+    color: var(--white);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(224, 74, 90, 0.4);
+}
+
+.cta-button:hover {
+    background-color: #c93b48;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background-color: var(--light-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 120px; /* 1440px desktop padding */
+    gap: 80px;
+    min-height: 700px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.hero-content {
+    max-width: 550px;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.highlight {
+    color: var(--primary-red);
+}
+
+.hero-description {
+    font-size: 16px;
+    color: var(--gray-text);
+    margin-bottom: 32px;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.hero-buttons button {
+    padding: 12px 24px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.resume-button {
+    background-color: var(--primary-red);
+    color: var(--white);
+}
+
+.contact-button {
+    background-color: transparent;
+    border: 2px solid var(--primary-red);
+    color: var(--primary-red);
+}
+
+.hero-buttons button:hover {
+    transform: translateY(-2px);
+}
+
+.hero-image-container {
+    position: relative;
+    width: 600px; /* Adjust based on your image size */
+    height: 700px; /* Adjust based on your image size */
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero-main-image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.rating-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 80px;
+    left: -120px;
+    z-index: 2;
+}
+
+.rating-score {
+    font-size: 32px;
+    font-weight: 700;
+    color: #4CAF50;
+}
+
+.rating-stars {
+    color: #FFC107;
+    font-size: 16px;
+}
+
+.rating-text {
+    font-size: 14px;
+    color: var(--gray-text);
+    font-weight: 500;
+}
+
+.resumes-created-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 0;
+    right: -120px;
+    z-index: 2;
+}
+
+.resumes-created-card .card-icon {
+    height: 48px;
+}
+
+.resumes-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.resumes-count {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-red);
+}
+
+.resumes-text {
+    font-size: 14px;
+    color: var(--gray-text);
+}
+
+/* --- Features Section --- */
+.features-section {
+    padding: 80px 120px; /* 1440px desktop padding */
+    text-align: center;
+}
+
+.section-label {
+    background-color: var(--primary-red);
+    color: var(--white);
+    display: inline-block;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.section-heading {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 64px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon-container {
+    height: 64px;
+    margin-bottom: 24px;
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: var(--gray-text);
+}
+
+/* --- Responsive Design for 375px Mobile --- */
+@media (max-width: 768px) {
+    /* General adjustments for tablet screens */
+    .header, .hero-section, .features-section {
+        padding: 24px; /* Reduced padding for tablets */
+    }
+
+    .nav-menu {
+        display: none; /* Hide nav menu on smaller screens */
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Full responsiveness for 375px mobile screens */
+    .header-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 24px;
+        gap: 60px;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .hero-buttons button {
+        width: 100%;
+        padding: 14px;
+    }
+
+    .hero-image-container {
+        width: 100%;
+        height: auto;
+        position: static;
+        display: block;
+        text-align: center;
+    }
+
+    .hero-main-image {
+        position: static;
+        transform: none;
+        max-width: 80%; /* Ensure image fits */
+    }
+
+    .rating-card, .resumes-created-card {
+        position: static; /* Stack cards statically below image */
+        margin: 20px auto;
+        width: 80%; /* Card width */
+    }
+    
+    .rating-card {
+        justify-content: center;
+    }
+
+    .resumes-created-card {
+        justify-content: center;
+    }
+
+    .features-section {
+        padding: 40px 24px;
+    }
+
+    .section-heading {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 24px;
+    }
+}
